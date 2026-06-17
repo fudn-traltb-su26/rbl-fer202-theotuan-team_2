@@ -2,7 +2,7 @@
 ## Hướng dẫn thực hành từng tuần — ReactJS (FER202)
 
 **Stack:** React 18 + Vite + React-Bootstrap 2.x + Axios + JSON-Server  
-**Nhóm:** 5 thành viên — phân công theo vai trò mỗi tuần  
+**Nhóm:** 3 thành viên — phân công theo vai trò mỗi tuần  
 **Repo tham khảo:** `Case-Study/SourceCode/WeekXX-*/`  
 **Template báo cáo:** `Case-Study/Template/WeekXX/WeekXX_BaoCaoNhom.docx`
 
@@ -11,6 +11,23 @@
 > - `[ALL]` = Cả nhóm cùng làm  
 > - `[REVIEW]` = Một thành viên khác review lại trước khi merge
 
+
+NHóm 2
+
+Họ và Tên : Nguyễn Văn Đức (Leader)
+MSSV : DE190388
+Email : 270505nguyenvanduc@gmail.com
+Link git : https://github.com/270505nguyenvanduc-arch/FER202_DucNV.git
+
+Họ và Tên : Trần Anh Tiến (Thành Viên)
+MSSV : DE190712
+Email : tiensactien123@gmail.com
+Link git : https://github.com/tiensactien123-dot
+
+Họ và Tên : Nguyễn Kim Anh Duy (Thành Viên)
+MSSV : DE190668
+Email : nguyenkimanhduy811@gmail.com
+Link git : https://github.com/nguyenkimanhduy811-DN/FER202_SU26_NguyenKimAnhDuy.git
 ---
 
 ## TUẦN 1 — KHỞI TẠO PROJECT & THIẾT KẾ GIAO DIỆN
@@ -27,6 +44,24 @@ Thiết lập nền tảng kỹ thuật và tư duy thiết kế trước khi co
 | C | Thiết kế màn hình Chi tiết sách + Giỏ hàng bằng **Figma Make** |
 | D | Thiết kế `db.json` — cấu trúc dữ liệu books, categories |
 | E | Vẽ Component Tree, viết `README.md`, tổng hợp prompt log |
+
+-Phân công nhiệm vụ chi tiết :
+
+ - Nguyễn Văn Đức (Trưởng nhóm — Kỹ thuật & DevOps):
+Chịu trách nhiệm toàn bộ về hạ tầng kỹ thuật và cấu trúc nền tảng ban đầu của dự án.
+
+Nhiệm vụ cụ thể: Khởi tạo kho lưu trữ (Repository) trên GitHub, cấu hình phân quyền và mời các thành viên tham gia phối hợp; trực tiếp khởi tạo dự án ReactJS bằng Vite, cài đặt các thư viện lõi hệ thống (react-bootstrap, bootstrap, react-router-dom, axios); tổ chức cấu trúc các thư mục sạch trong src/ và thiết lập file .gitignore tiêu chuẩn. (Kế thừa và chịu trách nhiệm toàn bộ phần việc của thành viên A).
+
+-Chu Cao Huy (Thành viên — Dữ liệu & Tài liệu hệ thống):
+Chịu trách nhiệm về mô hình dữ liệu nền tảng và tài liệu hướng dẫn vận hành dự án.
+
+Nhiệm vụ cụ thể: Thiết kế cấu trúc dữ liệu và trực tiếp viết tệp tin db.json chứa thông tin của ít nhất 8 cuốn sách và 5 danh mục theo đúng yêu cầu nghiệp vụ; cấu hình, khởi chạy thử nghiệm mock API bằng json-server trên cổng 3001; biên soạn file README.md tại thư mục gốc để hướng dẫn các thành viên cách cài đặt và chạy dự án. (Kế thừa phần việc của thành viên D và một phần của thành viên E).
+
+-Nguyễn Kim Anh Duy (Thành viên — UI/UX Design & Kiến trúc giao diện):
+Chịu trách nhiệm toàn bộ về mặt thẩm mỹ, luồng trải nghiệm người dùng và tư duy bóc tách thành phần.
+
+Nhiệm vụ cụ thể: Trực tiếp nghiên cứu requirements và ứng dụng các công cụ AI để thiết kế 4 màn hình chính (Dựng màn hình Trang chủ + Danh sách sách trên Google Stitch; dựng màn hình Chi tiết sách + Giỏ hàng trên Figma Make); đánh giá đầu ra theo checklist chất lượng; tổng hợp toàn bộ lịch sử Prompt đã dùng vào file prompts.md; xây dựng tài liệu bàn giao handoff.md và tiến hành phân rã giao diện thành sơ đồ cây thành phần Component Tree (docs/component-tree.png). (Kế thừa phần việc của thành viên B, C và một phần của thành viên E).
+
 
 ### ✅ Checklist công việc
 
