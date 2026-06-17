@@ -184,6 +184,21 @@ Hiểu JSX là gì (không phải HTML), biết cách viết Functional Componen
 | D | BookGrid.jsx (map() render list) |
 | E | CategoryList.jsx (conditional rendering) + tích hợp App.jsx |
 
+-Nguyễn Văn Đức (Trưởng nhóm — Kỹ thuật & Layout nâng cao):
+Chịu trách nhiệm xây dựng thành phần bao bọc layout dùng chung và cấu trúc tích hợp luồng dữ liệu trên file tổng.
+
+Nhiệm vụ cụ thể: Thiết kế và viết generic component SectionWrapper.jsx xử lý layout động với props.children (tái sử dụng ở ít nhất 3 nơi); chịu trách nhiệm cập nhật App.jsx, di dời dữ liệu BOOKS và CATEGORIES ra khỏi component con để truyền từ cha xuống thông qua cơ chế props, đồng thời thực hiện kiểm tra luồng dữ liệu bằng React DevTools. (Kế thừa phần việc của thành viên D và E).
+
+-Chu Cao Huy (Thành viên — Logic & Data Flow):
+Chịu trách nhiệm tái cấu trúc các cấu phần chứa danh sách dữ liệu và trực tiếp vẽ sơ đồ minh chứng luồng dữ liệu chảy trong app.
+
+Nhiệm vụ cụ thể: Tiến hành refactor bộ đôi component danh sách gồm BookGrid.jsx (nhận mảng books và hàm onAddToCart qua props để duyệt map động, xử lý empty state) và CategoryList.jsx (nhận mảng categories qua props); thiết kế và vẽ sơ đồ luồng dữ liệu hệ thống docs/week03-dataflow.png để phân tích rõ các mũi tên dữ liệu. (Kế thừa phần việc của thành viên B và C).
+
+-Nguyễn Kim Anh Duy(Thành viên — Reusable Component Developer):
+Chịu trách nhiệm bóc tách và tinh chỉnh linh kiện hiển thị cốt lõi, xóa bỏ hoàn toàn dữ liệu tĩnh.
+
+Nhiệm vụ cụ thể: Trực tiếp refactor linh kiện hạt nhân BookCard.jsx thành reusable component thông qua việc loại bỏ hoàn toàn mã hardcode dữ liệu cũ; thiết lập parameters nhận object { book, onAddToCart }; xử lý định dạng tiền tệ Việt Nam (toLocaleString), tính toán nhãn hiển thị giảm giá động (%) bằng biểu thức JSX và ràng buộc thuộc tính disabled cho nút bấm khi hết hàng (stock === 0). (Kế thừa và tập trung xử lý phần việc của thành viên A).
+
 ### ✅ Checklist công việc
 
 **Nghiên cứu trước [ALL]**
