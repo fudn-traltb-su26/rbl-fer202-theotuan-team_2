@@ -11,7 +11,7 @@ function Banner() {
         Đặt khám ngay
       </button>
     </div>
-  );
+  );1
 }
 
 export default Banner;
