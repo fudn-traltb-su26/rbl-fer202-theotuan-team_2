@@ -1,0 +1,22 @@
+{
+  "specialties": [
+    { "id": 1, "name": "Nội Tổng Quát", "icon": "bi-heart-pulse", "doctorCount": 3 },
+    { "id": 2, "name": "Nhi Khoa", "icon": "bi-person-badge", "doctorCount": 2 }
+  ],
+  "doctors": [
+    {
+      "id": 1,
+      "name": "BS. CKI Nguyễn Văn A",
+      "specialtyId": 1,
+      "specialty": "Nội Tổng Quát",
+      "price": 300000,
+      "originalPrice": 400000,
+      "rating": 4.8,
+      "experience": "10 năm kinh nghiệm",
+      "avatar": "https://picsum.photos/seed/doctor1/200/200",
+      "stock": 5,
+      "featured": true,
+      "description": "Chuyên gia điều trị các bệnh lý nội khoa người lớn..."
+    }
+  ]
+}
