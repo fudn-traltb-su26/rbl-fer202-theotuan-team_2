@@ -1,27 +1,25 @@
 import React from 'react';
 
-const MOCK_SPECIALTIES = [
-  { id: 1, name: 'Nội Tổng Quát' },
-  { id: 2, name: 'Nhi Khoa' },
-  { id: 3, name: 'Da Liễu' },
-  { id: 4, name: 'Tai Mũi Họng' },
-  { id: 5, name: 'Răng Hàm Mặt' }
-];
+function SpecialtyList({ specialties }) {
+  if (!specialties || specialties.length === 0) {
+    return <p style={{ textAlign: 'center', color: '#6c757d' }}>Không tìm thấy danh mục chuyên khoa nào.</p>;
+  }
 
-function SpecialtyList() {
   return (
-    <div style={{ padding: '20px' }}>
-      {MOCK_SPECIALTIES.length > 0 ? (
-        <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          {MOCK_SPECIALTIES.map((spec) => (
-            <div key={spec.id} style={{ padding: '15px 25px', background: '#f8f9fa', border: '1px solid #e9ecef', borderRadius: '8px', cursor: 'pointer', fontWeight: '500', color: '#495057', transition: 'all 0.2s' }}>
-              🔹 {spec.name}
-            </div>
-          ))}
+    <div style={{ display: 'flex', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+      {specialties.map((spec) => (
+        <div 
+          key={spec.id} 
+          style={{ padding: '15px 25px', background: '#fff', border: '1px solid #e9ecef', borderRadius: '8px', cursor: 'pointer', fontWeight: '500', color: '#495057', boxShadow: '0 2px 4px rgba(0,0,0,0.02)', display: 'flex', alignItems: 'center', gap: '10px' }}
+        >
+          {/* Render class icon động được chuẩn bị sẵn từ db */}
+          <span style={{ color: '#0d6efd' }}>🔹</span>
+          <span>{spec.name}</span>
+          <span style={{ background: '#e7f1ff', color: '#0d6efd', fontSize: '12px', padding: '2px 6px', borderRadius: '10px', marginLeft: '5px' }}>
+            {spec.doctorCount} BS
+          </span>
         </div>
-      ) : (
-        <p style={{ textAlign: 'center', color: '#666' }}>Không có chuyên khoa nào tồn tại.</p>
-      )}
+      ))}
     </div>
   );
 }
