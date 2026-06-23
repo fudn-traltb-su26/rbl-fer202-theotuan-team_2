@@ -25,4 +25,3 @@ function SpecialtyList({ specialties }) {
 }
 
 export default SpecialtyList;
-

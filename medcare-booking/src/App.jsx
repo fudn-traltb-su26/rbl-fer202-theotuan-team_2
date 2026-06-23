@@ -1,29 +1,107 @@
 import React from 'react';
 import Header from './components/Header';
 import Banner from './components/Banner';
+import SectionWrapper from './components/SectionWrapper';
 import SpecialtyList from './components/SpecialtyList';
 import DoctorGrid from './components/DoctorGrid';
 import Footer from './components/Footer';
 
+// MẢNG CƠ SỞ DỮ LIỆU ĐỘNG TUẦN 3 (Được bóc tách từ cấu trúc thiết kế db.json)
+const CLINIC_SPECIALTIES = [
+  { id: 1, name: 'Nội Tổng Quát', doctorCount: 3 },
+  { id: 2, name: 'Nhi Khoa', doctorCount: 2 },
+  { id: 3, name: 'Da Liễu', doctorCount: 2 },
+  { id: 4, name: 'Tai Mũi Họng', doctorCount: 1 },
+  { id: 5, name: 'Răng Hàm Mặt', doctorCount: 0 }
+];
+
+const CLINIC_DOCTORS = [
+  {
+    id: 1,
+    name: 'BS. CKI Nguyễn Văn A',
+    specialty: 'Nội Tổng Quát',
+    price: 300000,
+    originalPrice: 400000,
+    rating: 4.8,
+    experience: '10 năm kinh nghiệm',
+    avatar: 'https://picsum.photos/seed/doctor1/200/200',
+    stock: 5
+  },
+  {
+    id: 2,
+    name: 'ThS. BS Trần Thị B',
+    specialty: 'Nhi Khoa',
+    price: 350000,
+    originalPrice: 350000,
+    rating: 4.9,
+    experience: '8 năm kinh nghiệm',
+    avatar: 'https://picsum.photos/seed/doctor2/200/200',
+    stock: 2
+  },
+  {
+    id: 3,
+    name: 'BS. CKI Lê Hoàng C',
+    specialty: 'Da Liễu',
+    price: 250000,
+    originalPrice: 300000,
+    rating: 4.6,
+    experience: '12 năm kinh nghiệm',
+    avatar: 'https://picsum.photos/seed/doctor3/200/200',
+    stock: 0 // Hết lịch khám mẫu để test trạng thái disabled nút bấm
+  },
+  {
+    id: 4,
+    name: 'Phó GS. TS Phạm Văn D',
+    specialty: 'Tai Mũi Họng',
+    price: 500000,
+    originalPrice: 600000,
+    rating: 5.0,
+    experience: '20 năm kinh nghiệm',
+    avatar: 'https://picsum.photos/seed/doctor4/200/200',
+    stock: 4
+  }
+];
+
 function App() {
+  // Hàm Callback đón nhận tương tác ngược dòng từ component con đưa lên
+  const handleBookAppointment = (doctor) => {
+    console.log(`[Hệ thống MedCare] Ghi nhận yêu cầu đặt lịch khám với: ${doctor.name} - Chi phí: ${doctor.price.toLocaleString('vi-VN')}đ`);
+  };
+
   return (
     <div className="medcare-app">
       <Header />
       <Banner />
       
-      {/* Vùng chuyên khoa */}
-      <div style={{ padding: '40px 20px', textAlign: 'center' }}>
-        <h2 style={{ marginBottom: '10px', color: '#212529' }}>Chuyên Khoa Y Tế</h2>
-        <p style={{ color: '#666', marginBottom: '30px' }}>Chọn chuyên khoa để tìm kiếm bác sĩ phù hợp</p>
-        <SpecialtyList />
-      </div>
+      {/* Vị trí ứng dụng 1: Khối Chuyên khoa bọc bởi SectionWrapper */}
+      <SectionWrapper 
+        title="Chuyên Khoa Y Tế" 
+        subtitle="Chọn chuyên khoa thích hợp để rút ngắn thời gian tìm kiếm bác sĩ chuyên khoa phụ trách"
+        backgroundColor="#f8f9fa"
+      >
+        <SpecialtyList specialties={CLINIC_SPECIALTIES} />
+      </SectionWrapper>
 
-      {/* Vùng danh sách bác sĩ */}
-      <div style={{ padding: '40px 20px', textAlign: 'center', background: '#f8f9fa' }}>
-        <h2 style={{ marginBottom: '10px', color: '#212529' }}>Đội Ngũ Bác Sĩ Nổi Bật</h2>
-        <p style={{ color: '#666', marginBottom: '30px' }}>Các chuyên gia y tế hàng đầu sẵn sàng hỗ trợ bạn</p>
-        <DoctorGrid />
-      </div>
+      {/* Vị trí ứng dụng 2: Khối Đội ngũ bác sĩ bọc bởi SectionWrapper */}
+      <SectionWrapper 
+        title="Đội Ngũ Bác Sĩ Nổi Bật" 
+        subtitle="Đặt lịch hẹn trực tiếp với các chuyên gia y tế uy tín hàng đầu, tận tâm vì sức khỏe của bạn"
+      >
+        <DoctorGrid doctors={CLINIC_DOCTORS} onBookAppointment={handleBookAppointment} />
+      </SectionWrapper>
+
+      {/* Vị trí ứng dụng 3: Khối Giới thiệu tính năng dịch vụ bổ trợ bổ sung (Đạt tiêu chuẩn sử dụng tối thiểu 3 vị trí) */}
+      <SectionWrapper
+        title="Tại Sao Nên Chọn MedCare?"
+        subtitle="Hệ thống công nghệ tiên tiến mang lại trải nghiệm khám chữa bệnh tối ưu nhất"
+        backgroundColor="#e7f1ff"
+      >
+        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', color: '#0a58ca', fontWeight: '500' }}>
+          <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', textAlign: 'center', width: '200px' }}>⏱️ Tiết kiệm thời gian</div>
+          <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', textAlign: 'center', width: '200px' }}>👨‍⚕️ Bác sĩ đầu ngành</div>
+          <div style={{ background: '#fff', padding: '20px', borderRadius: '8px', textAlign: 'center', width: '200px' }}>🔒 Bảo mật tuyệt đối</div>
+        </div>
+      </SectionWrapper>
 
       <Footer />
     </div>
