@@ -17,17 +17,19 @@ NHóm 2
 Họ và Tên : Nguyễn Văn Đức (Leader)
 MSSV : DE190388
 Email : 270505nguyenvanduc@gmail.com
-Link git : https://github.com/270505nguyenvanduc-arch/FER202_DucNV.git
 
-Họ và Tên : Trần Anh Tiến (Thành Viên)
-MSSV : DE190712
-Email : tiensactien123@gmail.com
-Link git : https://github.com/tiensactien123-dot
+Họ và Tên : Nguyễn Minh Trung (Thành Viên)
+MSSV : DE190522
+Email : Bondz1607@gmail.com
+
+Họ và Tên : Chu Cao Huy (Thành Viên)
+MSSV : DE190541
+Email : hyycichu@gmail.com
 
 Họ và Tên : Nguyễn Kim Anh Duy (Thành Viên)
 MSSV : DE190668
 Email : nguyenkimanhduy811@gmail.com
-Link git : https://github.com/nguyenkimanhduy811-DN/FER202_SU26_NguyenKimAnhDuy.git
+
 ---
 
 ## TUẦN 1 — KHỞI TẠO PROJECT & THIẾT KẾ GIAO DIỆN
