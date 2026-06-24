@@ -5,6 +5,10 @@ import SectionWrapper from './components/SectionWrapper';
 import SpecialtyList from './components/SpecialtyList';
 import DoctorGrid from './components/DoctorGrid';
 import Footer from './components/Footer';
+import doctor1 from './assets/buiquocdat.jpg';
+import doctor2 from './assets/caoanhkhoa.jpg';
+import doctor3 from './assets/dangphuc.jpg';
+import doctor4 from './assets/dinhphuphuoc.jpg';
 
 // MẢNG CƠ SỞ DỮ LIỆU ĐỘNG TUẦN 3 (Được bóc tách từ cấu trúc thiết kế db.json)
 const CLINIC_SPECIALTIES = [
@@ -18,46 +22,46 @@ const CLINIC_SPECIALTIES = [
 const CLINIC_DOCTORS = [
   {
     id: 1,
-    name: 'BS. CKI Nguyễn Văn A',
+    name: 'BS. Bùi Quốc Đạt',
     specialty: 'Nội Tổng Quát',
     price: 300000,
     originalPrice: 400000,
     rating: 4.8,
     experience: '10 năm kinh nghiệm',
-    avatar: 'https://picsum.photos/seed/doctor1/200/200',
+    avatar: doctor1,
     stock: 5
   },
   {
     id: 2,
-    name: 'ThS. BS Trần Thị B',
+    name: 'BS. Cao Anh Khoa',
     specialty: 'Nhi Khoa',
     price: 350000,
     originalPrice: 350000,
     rating: 4.9,
     experience: '8 năm kinh nghiệm',
-    avatar: 'https://picsum.photos/seed/doctor2/200/200',
+    avatar: doctor2,
     stock: 2
   },
   {
     id: 3,
-    name: 'BS. CKI Lê Hoàng C',
+    name: 'BS. Đặng Phúc',
     specialty: 'Da Liễu',
     price: 250000,
     originalPrice: 300000,
     rating: 4.6,
     experience: '12 năm kinh nghiệm',
-    avatar: 'https://picsum.photos/seed/doctor3/200/200',
-    stock: 0 // Hết lịch khám mẫu để test trạng thái disabled nút bấm
-  },
+    avatar: doctor3,
+    stock: 3 
+  }, // <-- ĐÃ SỬA: Thêm dấu đóng ngoặc nhọn và dấu phẩy ở đây
   {
     id: 4,
-    name: 'Phó GS. TS Phạm Văn D',
+    name: 'BS. Đinh Phú Phước',
     specialty: 'Tai Mũi Họng',
     price: 500000,
     originalPrice: 600000,
     rating: 5.0,
     experience: '20 năm kinh nghiệm',
-    avatar: 'https://picsum.photos/seed/doctor4/200/200',
+    avatar: doctor4,
     stock: 4
   }
 ];
@@ -90,7 +94,7 @@ function App() {
         <DoctorGrid doctors={CLINIC_DOCTORS} onBookAppointment={handleBookAppointment} />
       </SectionWrapper>
 
-      {/* Vị trí ứng dụng 3: Khối Giới thiệu tính năng dịch vụ bổ trợ bổ sung (Đạt tiêu chuẩn sử dụng tối thiểu 3 vị trí) */}
+      {/* Vị trí ứng dụng 3: Khối Giới thiệu tính năng dịch vụ bổ trợ bổ sung */}
       <SectionWrapper
         title="Tại Sao Nên Chọn MedCare?"
         subtitle="Hệ thống công nghệ tiên tiến mang lại trải nghiệm khám chữa bệnh tối ưu nhất"
